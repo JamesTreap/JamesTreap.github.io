@@ -1,0 +1,682 @@
+/* ---- initialization & definitions --------- */
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@font-face {
+  font-family: RadiateSans;
+  src: url(fonts/radiate-sans-bold.ttf);
+}
+
+:root {
+  --borderRad: 15px;
+  --sitewidth: 1215px;
+  --siteMargin: 3em;
+  --minWidth: 320px;
+  --offset: 6s;
+  --textColour1: #FFFFFF;
+  --black: #000000;
+  --white: #FFFFFF;
+  --gray: rgba(255, 255, 255, 0.699);
+  --text-color: #fff;
+  --main-color: #64c6ff;
+  --pink: #ff01e3;
+  --bg-color: #0a192f;
+  --bg-color-contrast: #11294e;
+  --paddingCalc: calc(max(var(--siteMargin), (100% - var(--sitewidth))/2));
+  --paddingCalcMobile: calc(max(var(--siteMargin) - 1.5em, (100% - var(--sitewidth))/2));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    color: var(--textColour1);
+    text-transform: uppercase;
+    font-family: RadiateSans;
+    font-weight: 900;
+    font-size: 9.375em;
+    line-height: 0.75em;
+    text-shadow: -0.03em 0 #ff01e3, 0.03em 0 #0ff3ff;
+    padding-bottom: 0.150em;
+}
+
+h2 {
+  color: var(--textColour1);
+  font-size: 2em;
+  font-family: RadiateSans;
+  font-weight: 900;
+}
+
+h3 {
+  color: var(--textColour1);
+  text-transform: uppercase;
+  font-family: RadiateSans;
+  font-weight: 900;
+  font-size: 3em;
+  line-height: 1em;
+  padding-bottom: 0.125em;
+}
+
+h5 {
+  font-size: 2em;
+  background: -webkit-linear-gradient(var(--main-color), var(--bg-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h6 {
+  font-family: RadiateSans;
+  font-size: 1.4em;
+  color: var(--white);
+  line-height: 1.2em;
+}
+
+p {
+  font-family: Poppins;
+  color: var(--gray);
+}
+
+span {
+  color: var(--main-color);
+  background: linear-gradient(var(--main-color) 35%, var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0.1em 0.1em var(--black));
+}
+
+span2 {
+  color: var(--main-color);
+}
+
+button {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: transparent;
+  border-image: linear-gradient(100deg, #ff01e3, #0ff3ff) 1;
+}
+
+button a {
+  padding: 1em;
+  color: var(--white);
+  transition: 200ms ease-in-out background-color;
+  font-family: Poppins;
+  font-size: 1.25em;
+}
+
+button a:hover{
+  background-color: var(--bg-color);
+  transition: 200ms ease-in-out background-color;
+}
+
+/* ---- styling for the body of the page ---- */
+body {
+  min-width: var(--minWidth);
+  background-color: var(--bg-color);
+  scroll-behavior: smooth;
+  background-image: url("images/background2.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+/* ---- header styling --------- */
+header, footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  font-family: 'Poppins';
+}
+
+header {
+  padding-top: 1em;
+  color: var(--gray);
+}
+
+.logo {
+  max-width: 6em;
+  filter: invert(100%);
+  padding-top: 0.5em;
+  animation-name: enterin;
+  animation-duration: 0.5s;
+  animation-delay: var(--offset);
+  animation-fill-mode: both;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+/* for responsiveness on mobile */
+@media screen and (max-width: 750px) { 
+  .nav-list li a {
+    display: none;
+  }
+}
+
+.nav-list li {
+  display: inline-block;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.nav-list li a {
+  color: var(--main-color);
+  animation-name: enterin;
+  animation-duration: 0.5s;
+  animation-delay: calc(var(--offset) + var(--index) * 0.5s);
+  animation-fill-mode: both;
+  font-weight: 600;
+  transition: 200ms ease-in-out;
+}
+
+.nav-list li a:hover {
+  color: var(--white);
+}
+
+.nav-list button {
+  animation-name: enterin;
+  animation-duration: 0.5s;
+  animation-delay: calc(var(--offset) + var(--index) * 0.5s);
+  animation-fill-mode: both;
+}
+
+@keyframes enterUp {   
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ---- landing tab styling ---- */
+.landingTab {
+  background-image: linear-gradient(to bottom, transparent 90%, 
+                                  rgba(0,0,0,0.2) 95%, rgba(0,0,0,0.8)), 
+                                  url(images/website\ landingpage.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: var(--textColour1);
+  padding-right: var(--paddingCalc);
+  padding-left: var(--paddingCalc);
+}
+
+.tabText {
+  text-align: left;
+  padding-top: 6em;
+  padding-bottom: 10em;
+  max-width: 35em;
+}
+
+.tabText .hello {
+  animation-name: enterin;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.tabText h1 {
+  animation-name: enterin;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+/* responsiveness for h1 */
+@media screen and (max-width: 650px) { 
+  .tabText h1 {
+    font-size: 6em;
+  }
+}
+
+.tabText h6 {
+  animation-name: enterin;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+}
+
+.tabText .desc {
+  animation-name: enterin;
+  animation-duration: 1s;
+  animation-delay: 3s;
+  animation-fill-mode: both;
+}
+
+.tabText button {
+  margin-top: 1em;
+  animation-name: enterin;
+  animation-duration: 1s;
+  animation-delay: 5.5s;
+  animation-fill-mode: both;
+}
+
+
+/* ---- styling for the roles section ----*/
+.roles {
+  overflow: hidden;
+  position: relative;
+  min-height: 10.5em;
+  background-color: #18242e;
+  white-space: pre;
+}
+
+.scroll-left {
+  top: 0.625em;
+  position: absolute;
+  text-transform: uppercase;
+  animation: leftscroll 60s linear infinite;
+}
+
+.scroll-right {
+  position: absolute;
+  top: 2.70em;
+  text-transform: uppercase;
+  animation: rightscroll 60s linear infinite;
+}
+
+@keyframes leftscroll {
+  from {
+    left: 0;
+  }
+  to {
+    left: -800px;
+  }
+}
+
+@keyframes rightscroll {
+  from {
+    right: 0;
+  }
+  to {
+    right: -800px;
+  }
+}
+
+/* ---- styling for programming experience ---- */
+#programExp {
+  padding-right: var(--paddingCalc);
+  padding-left: var(--paddingCalc);
+  padding-top: 5em;
+  padding-bottom: 7em;
+  background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%,
+                                            rgba(0,0,0,0.2) 5%,
+                                              transparent 10%,
+                                              transparent 90%, 
+                                            rgba(0,0,0,0.2) 95%, 
+                                            rgba(0,0,0,0.8));
+}
+
+@media screen and (max-width: 550px){
+  #programExp {
+    padding-right: var(--paddingCalcMobile);
+    padding-left: var(--paddingCalcMobile);
+  }
+}
+
+#programExp .container {
+  place-items: center;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--borderRad);
+}
+
+.img {
+  width: 100px;
+  height: 500px;
+  box-shadow: 0 0 .5rem rgba(0, 0, 0, .5);
+  cursor: pointer;
+  border-radius: .5rem;
+  position: relative;
+  transition: 200ms ease-in-out width;
+  --index: 0;
+  opacity: 0;
+  border-radius: var(--borderRad);
+}
+
+.img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, .6);
+  transition: 200ms ease-in-out background-color;
+  border-radius: var(--borderRad);
+}
+
+.img h4 {
+  color: #fff;
+  position: absolute;
+  z-index: 10;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%) rotate(-90deg);
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: .2rem;
+  text-shadow: 0 0 1rem rgba(0, 0, 0, .8);
+  text-align: center;
+  transition: 200ms ease-in-out transform,
+              200ms ease-in-out font-size,
+              200ms ease-in-out bottom,
+              200ms ease-in-out right;
+  white-space: pre-line;
+}
+
+.img.show_img {
+  width: 750px;
+}
+
+.img.show_img::before {
+  background-color: rgba(0, 0, 0, 0);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, .8));
+}
+
+.img.show_img h4 {
+  transform: translate(0, 0) rotate(0);
+  text-align: right;
+  font-size: 3rem;
+  bottom: 30px;
+  right: 20px;
+}
+
+.img p {
+  bottom: 0%;
+  right: 0%;
+  visibility: hidden;
+}
+
+.img.show_img p {
+  font-size: 15px;
+  z-index: 10;
+  bottom: 0%;
+  right: 0%;
+  visibility: visible;
+  text-align: right;
+  position: absolute;
+  margin-bottom: 10px;
+  margin-right: 25px;
+  color: white;
+  text-shadow: 0 0 1rem rgba(0, 0, 0, .8);
+  transition-delay: 150ms;
+}
+
+@keyframes enterin {
+  from {left: -100px;}
+  to {left: 0px;}
+ 
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* for responsiveness on mobile */
+@media screen and (max-width: 961px) { 
+  #programExp .container {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  .img {
+    width: 100%;
+    height: 100px;
+    transition: 200ms ease-in-out height;
+  }
+  .img.show_img {
+    width: 100%;
+    height: 400px;
+  }
+  .img h4 {
+    transform: translate(50%, 50%);
+  }
+}
+
+/* employment history ---------------------------------------------------------- */
+#employHist {
+  background-image: linear-gradient(to bottom, 
+                rgba(0,0,0,1) 0%,
+                rgba(0,0,0,0.2) 10%, 
+                rgba(0,0,0,0.2) 90%, 
+                rgba(0,0,0,1)), url("images/otherbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-right: var(--paddingCalc);
+  padding-left: var(--paddingCalc);
+  min-height: 50em;
+}
+
+.employDesc {
+  max-width: 38em;
+  margin-left: auto; 
+  margin-right: 0;
+  padding-top: 10em;
+  padding-bottom: 10em;
+}
+
+.contain {
+	background: var(--bg-color);
+	border-radius: var(--borderRad);
+  margin-top: 1em;
+	box-shadow: 0 25px 25px rgba(0, 0, 0, .5);
+}
+
+.fadeAnim {
+  animation: enterUp 1.5s;
+  animation-fill-mode: both;
+}
+
+.wrapper {
+	display: flex;
+}
+
+.indicator, .indicator2 {
+	padding: 1.5rem 0;
+	border-right: 1px solid var(--main-color);
+}
+
+.indicator li, .indicator2 li {
+	display: flex;
+  width: 11em;
+	align-items: center;
+	grid-gap: .5rem;
+	padding: 10px 2rem;
+	cursor: pointer;
+	border-right: 3px solid transparent;
+  font-family: Poppins;
+  color: var(--white);
+}
+
+.indicator li:hover, .indicator2 li:hover  {
+	background: var(--bg-color-contrast);
+}
+
+.indicator li.active, .indicator2 li.active2 {
+	border-right-color: var(--pink);
+  transition: 200ms ease-in-out;
+	color: var(--white);
+	background: var(--bg-color-contrast);
+}
+
+.content, .content2 {
+	padding: 1.5rem 2rem;
+}
+
+.content p, .content2 p {
+  padding-bottom: 0.5em;
+}
+
+.active2 a {
+  word-break: break-all;
+}
+
+.content li, .content2 li {
+	display: none;
+}
+
+.content li.active, .content2 li.active2 {
+	display: block;
+}
+
+@media screen and (max-width: 560px) { 
+  .indicator li, .indicator2 li {
+    width: 8em;
+  }
+}
+
+/* web portfolio --------------------------------------------------------------- */
+#webPort {
+  padding-right: var(--paddingCalc);
+  padding-left: var(--paddingCalc);
+  padding-top: 10em;
+  padding-bottom: 10em;
+  background-image: linear-gradient(to top, 
+                  rgba(0,0,0,0.8),
+                  rgba(0,0,0,0.2) 5%,
+                  transparent 10%,
+                  transparent 90%, 
+                  rgba(0,0,0,0.2) 95%, rgba(0,0,0,0.8));
+}
+
+#webPort .container {
+  display: flex;
+  column-gap: 1.5rem;
+}
+
+.website {
+  position: relative;
+}
+
+.website::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, .8));
+  transition: background 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.website:hover::before {
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 0.2s ease;
+}
+
+.website h4 {
+  color: white;
+  font-family: Poppins;
+  position: absolute;
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: .2rem;
+  text-shadow: 0 0 1rem rgba(0, 0, 0, .8);
+  text-align: right;
+  font-size: 2.5rem;
+  bottom: 0.5em;
+  right: 0.5em;
+}
+
+@media screen and (max-width: 850px) { 
+  #webPort .container {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+}
+
+
+/* volunteer section ---------------------------------------------------------- */
+#volunteer {
+  padding-right: var(--paddingCalc);
+  padding-left: var(--paddingCalc);
+  background-image: linear-gradient(to bottom, 
+                rgba(0,0,0,1) 0%,
+                rgba(0,0,0,0.2) 10%, 
+                rgba(0,0,0,0.2) 90%, 
+                rgba(0,0,0,1)), url("images/planetbg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#volunteer a:focus {
+  color: var(--pink);
+  font-weight: 400;
+}
+
+
+/* ---------------------------------------------------------------------------- */
+#contact {
+  padding-top: 4em;
+  padding-right: var(--paddingCalc);
+  padding-left: var(--paddingCalc);
+  padding-bottom: 3em;
+  background-color: var(--bg-color);
+}
+
+#contact p {
+  max-width: 40em;
+}
+
+#contact button {
+  margin-top: 1.125em;
+}
+
+#contact .svg {
+  fill: var(--white);
+}
+
+/* ---- footer styling ---- */
+footer {
+  padding-right: var(--paddingCalc);
+  padding-left: var(--paddingCalc);
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: var(--bg-color);
+}
+
+svg {
+  fill: var(--white);
+  color: var(--white);
+  margin-left: 10px;
+}
+
+svg:hover {
+  fill: var(--main-color);
+  transition: 200ms ease-in-out;
+}
+
+/* ---- some extra styling here for bonus cool points ---- */
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {  
+  background-color: var(--white);
+  border-radius: 25em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:  linear-gradient(#ff01e3 -10%, #0ff3ff 110%);
+  border-radius: 25em;
+}
+
+
+/* -- improve responsiveness -- */
