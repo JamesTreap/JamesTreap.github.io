@@ -33,6 +33,10 @@
     scroll-behavior: smooth;
 }
 
+div#preloader {
+  display: none;
+}
+
 h1 {
     color: var(--textColour1);
     text-transform: uppercase;
