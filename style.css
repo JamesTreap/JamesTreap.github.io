@@ -201,7 +201,7 @@ header {
 .landingTab {
   background-image: linear-gradient(to bottom, transparent 90%, 
                                   rgba(0,0,0,0.2) 95%, rgba(0,0,0,0.8)), 
-                                  url(images/website\ landingpage.png);
+                                  url(images/website\ landingpage.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -455,7 +455,7 @@ img {
                 rgba(0,0,0,1) 0%,
                 rgba(0,0,0,0.2) 10%, 
                 rgba(0,0,0,0.2) 90%, 
-                rgba(0,0,0,1)), url("images/otherbg.png");
+                rgba(0,0,0,1)), url("images/otherbg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -610,7 +610,7 @@ img {
                 rgba(0,0,0,1) 0%,
                 rgba(0,0,0,0.2) 10%, 
                 rgba(0,0,0,0.2) 90%, 
-                rgba(0,0,0,1)), url("images/planetbg.png");
+                rgba(0,0,0,1)), url("images/planetbg.jpg");
   background-size: cover;
   background-position: center;
 }
