@@ -16,7 +16,7 @@ const web2 = document.querySelectorAll('.website')[1];
 // for the navbar to immediately transition in when rescaling ---------------------
 function startNav() {
     setTimeout(function(){
-        var r = document.querySelector(':root');
+        let r = document.querySelector(':root');
         r.style.setProperty('--offset', '0s');
     }, 10000);
 }
