@@ -10,8 +10,8 @@ const allContent2 = document.querySelectorAll('.content2 li');
 const langSec = document.querySelector('.container');
 const theTab1 = document.querySelectorAll('.contain')[0];
 const theTab2 = document.querySelectorAll('.contain')[1];
-const web1 = document.querySelectorAll('.website')[0];
-const web2 = document.querySelectorAll('.website')[1];
+const webSec = document.getElementById('contained');
+const websites = document.getElementsByTagName('website');
 
 // for the navbar to immediately transition in when rescaling ---------------------
 function startNav() {
@@ -40,10 +40,8 @@ observer.observe(langSec);
 
 // add/remove the show_img tag for slider
 init.forEach((img) => {
-	init.forEach((img) => {
-		remove_class(images);
-		img.classList.add('show_img');
-	});
+	remove_class(images);
+	img.classList.add('show_img');
 });
 
 images.forEach((img) => {
@@ -69,12 +67,11 @@ const observer2 = new IntersectionObserver((entries) => {
 			return;
 		}
 		entry.target.classList.remove('fadeAnim');
+		entry.target.style.opacity = 0;
 	});
 });
 observer2.observe(theTab1);
 observer2.observe(theTab2);
-observer2.observe(web1);
-observer2.observe(web2);
 
 // ------------------------------------------------------------------------------
 // add/remove the active tag for the tabs

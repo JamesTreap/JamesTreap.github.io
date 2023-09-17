@@ -182,8 +182,7 @@ header {
 
 .nav-list li {
 	display: inline-block;
-	padding-left: 1em;
-	padding-right: 1em;
+	padding-left: 2em;
 }
 
 .nav-list li a {
@@ -205,6 +204,10 @@ header {
 	animation-duration: 0.5s;
 	animation-delay: calc(var(--offset) + var(--index) * 0.5s);
 	animation-fill-mode: both;
+}
+
+.nav-list button a {
+	color: var(--white);
 }
 
 /* for responsiveness on mobile */
@@ -349,6 +352,15 @@ header {
 	font-family: 'Poppins', sans-serif;
 }
 
+#programExp a {
+	color: var(--main-color);
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition-duration: 500ms;
+}
+#programExp a:hover {
+	color: var(--white);
+}
+
 img {
 	width: 100%;
 	height: 100%;
@@ -397,6 +409,7 @@ img {
 
 .img.show_img {
 	width: 750px;
+	cursor: default;
 }
 
 .img.show_img::before {
@@ -587,10 +600,7 @@ img {
 
 /* web portfolio --------------------------------------------------------------- */
 #webPort {
-	padding-right: var(--paddingCalc);
-	padding-left: var(--paddingCalc);
-	padding-top: 10em;
-	padding-bottom: 10em;
+	padding: 5em var(--paddingCalc);
 	background-image: linear-gradient(
 		to top,
 		rgba(0, 0, 0, 0.8),
@@ -602,13 +612,19 @@ img {
 	);
 }
 
-#webPort .container {
-	display: flex;
-	column-gap: 1.5rem;
+#contained {
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	column-gap: 1.2em;
+	row-gap: 1.2em;
 }
 
 .website {
 	position: relative;
+	animation-name: enterin;
+	animation-duration: 0.5s;
+	animation-delay: calc(var(--index) * 350ms);
+	animation-fill-mode: both;
 }
 
 .website::before {
@@ -616,7 +632,7 @@ img {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 80%, rgba(0, 0, 0, 0.8));
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.8));
 	transition: background 0.2s ease-in-out;
 	pointer-events: none;
 }
@@ -631,18 +647,23 @@ img {
 	position: absolute;
 	text-transform: uppercase;
 	line-height: 1em;
-	letter-spacing: 0.2rem;
+	letter-spacing: 0.04em;
 	text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
-	text-align: right;
+	text-align: left;
 	font-size: 2.5rem;
-	bottom: 0.5em;
-	right: 0.5em;
+	bottom: 0.3em;
+	left: 0.3em;
 }
 
-@media screen and (max-width: 850px) {
-	#webPort .container {
-		flex-direction: column;
-		row-gap: 1rem;
+@media screen and (max-width: 1060px) {
+	#webPort .contained {
+		grid-template-columns: 50% 50%;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	#webPort .contained {
+		grid-template-columns: 100%;
 	}
 }
 
