@@ -5,13 +5,13 @@ const allIndicator = document.querySelectorAll('.indicator li');
 const allContent = document.querySelectorAll('.content li');
 const allIndicator2 = document.querySelectorAll('.indicator2 li');
 const allContent2 = document.querySelectorAll('.content2 li');
+const websites = document.getElementById('contained');
+const webChildren = websites.querySelectorAll('.website');
 
 // declare constants for observers
 const langSec = document.querySelector('.container');
 const theTab1 = document.querySelectorAll('.contain')[0];
 const theTab2 = document.querySelectorAll('.contain')[1];
-const webSec = document.getElementById('contained');
-const websites = document.getElementsByTagName('website');
 
 // for the navbar to immediately transition in when rescaling ---------------------
 function startNav() {
@@ -72,6 +72,28 @@ const observer2 = new IntersectionObserver((entries) => {
 });
 observer2.observe(theTab1);
 observer2.observe(theTab2);
+
+// ------------------------------------------------------------------------------
+// website section, play intro anim
+const webObserver = new IntersectionObserver((entries) => {
+	entries.forEach((entry) => {
+		const intersecting = entry.isIntersecting;
+		const len = webChildren.length;
+
+		if (intersecting) {
+			for (let i = 0; i < len; i++) {
+				webChildren[i].classList.add('webAnim');
+			}
+			return;
+		}
+		for (let i = 0; i < len; i++) {
+			webChildren[i].classList.remove('webAnim');
+			webChildren[i].style.opacity = 0;
+		}
+	});
+});
+
+webObserver.observe(websites);
 
 // ------------------------------------------------------------------------------
 // add/remove the active tag for the tabs

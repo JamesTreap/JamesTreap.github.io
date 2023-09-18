@@ -232,7 +232,12 @@ header {
 
 /* ---- landing tab styling ---- */
 .landingTab {
-	background-image: linear-gradient(to bottom, transparent 90%, rgba(0, 0, 0, 0.2) 95%, rgba(0, 0, 0, 0.8)),
+	background-image: linear-gradient(
+			to bottom,
+			transparent 90%,
+			rgba(0, 0, 0, 0.2) 95%,
+			rgba(0, 0, 0, 0.8)
+		),
 		url(images/website\ landingpage.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -405,6 +410,7 @@ img {
 	transition: 200ms ease-in-out transform, 200ms ease-in-out font-size, 200ms ease-in-out bottom,
 		200ms ease-in-out right;
 	white-space: pre-line;
+	width: 10em;
 }
 
 .img.show_img {
@@ -423,6 +429,7 @@ img {
 	font-size: 3rem;
 	bottom: 30px;
 	right: 20px;
+	width: 100%;
 }
 
 @media screen and (max-width: 550px) {
@@ -621,9 +628,12 @@ img {
 
 .website {
 	position: relative;
+}
+
+.webAnim {
 	animation-name: enterin;
 	animation-duration: 0.5s;
-	animation-delay: calc(var(--index) * 350ms);
+	animation-delay: calc(var(--index) * 450ms);
 	animation-fill-mode: both;
 }
 
