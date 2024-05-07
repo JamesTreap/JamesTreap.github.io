@@ -85,6 +85,7 @@ h5 {
 	font-size: 1.4em;
 	color: var(--white);
 	line-height: 1.2em;
+	margin-bottom: 6px;
 }
 
 p {
@@ -231,13 +232,7 @@ header {
 
 /* ---- landing tab styling ---- */
 .landingTab {
-	background-image: linear-gradient(
-			to bottom,
-			transparent 90%,
-			rgba(0, 0, 0, 0.2) 95%,
-			rgba(0, 0, 0, 0.8)
-		),
-		url(images/website\ landingpage.jpg);
+	background-image: linear-gradient(to bottom, transparent 90%, rgba(0, 0, 0, 0.2) 95%, rgba(0, 0, 0, 0.8)), url(images/website\ landingpage.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -336,15 +331,7 @@ header {
 	padding-left: var(--paddingCalc);
 	padding-top: 5em;
 	padding-bottom: 7em;
-	background-image: linear-gradient(
-		to top,
-		rgba(0, 0, 0, 0.8) 0%,
-		rgba(0, 0, 0, 0.2) 5%,
-		transparent 10%,
-		transparent 90%,
-		rgba(0, 0, 0, 0.2) 95%,
-		rgba(0, 0, 0, 0.8)
-	);
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 5%, transparent 10%, transparent 90%, rgba(0, 0, 0, 0.2) 95%, rgba(0, 0, 0, 0.8));
 }
 
 #programExp .container {
@@ -406,8 +393,7 @@ img {
 	letter-spacing: 0.2rem;
 	text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
 	text-align: center;
-	transition: 200ms ease-in-out transform, 200ms ease-in-out font-size, 200ms ease-in-out bottom,
-		200ms ease-in-out right;
+	transition: 200ms ease-in-out transform, 200ms ease-in-out font-size, 200ms ease-in-out bottom, 200ms ease-in-out right;
 	white-space: pre-line;
 	width: 10em;
 }
@@ -501,20 +487,13 @@ img {
 
 /* employment history ---------------------------------------------------------- */
 #employHist {
-	background-image: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 1) 0%,
-			rgba(0, 0, 0, 0.2) 10%,
-			rgba(0, 0, 0, 0.2) 90%,
-			rgba(0, 0, 0, 1)
-		),
-		url('images/otherbg.jpg');
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 1)), url('images/otherbg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	padding-right: var(--paddingCalc);
 	padding-left: var(--paddingCalc);
-	min-height: 50em;
+	min-height: 55em;
 }
 
 .employDesc {
@@ -607,15 +586,7 @@ img {
 /* web portfolio --------------------------------------------------------------- */
 #webPort {
 	padding: 5em var(--paddingCalc);
-	background-image: linear-gradient(
-		to top,
-		rgba(0, 0, 0, 0.8),
-		rgba(0, 0, 0, 0.2) 5%,
-		transparent 10%,
-		transparent 90%,
-		rgba(0, 0, 0, 0.2) 95%,
-		rgba(0, 0, 0, 0.8)
-	);
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2) 5%, transparent 10%, transparent 90%, rgba(0, 0, 0, 0.2) 95%, rgba(0, 0, 0, 0.8));
 }
 
 #contained {
@@ -681,14 +652,7 @@ img {
 #volunteer {
 	padding-right: var(--paddingCalc);
 	padding-left: var(--paddingCalc);
-	background-image: linear-gradient(
-			to bottom,
-			rgba(0, 0, 0, 1) 0%,
-			rgba(0, 0, 0, 0.2) 10%,
-			rgba(0, 0, 0, 0.2) 90%,
-			rgba(0, 0, 0, 1)
-		),
-		url('images/planetbg.jpg');
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.2) 10%, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 1)), url('images/planetbg.jpg');
 	background-size: cover;
 	background-position: center;
 }
